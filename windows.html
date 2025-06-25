@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Event Example</title>
+  <script>
+    // This function runs when the window is resized
+    window.addEventListener("resize", function () {
+      document.getElementById("output").innerText = 
+        "Window resized to: " + window.innerWidth + " x " + window.innerHeight;
+    });
+
+    // This function runs when the page is fully loaded
+    window.addEventListener("load", function () {
+      document.getElementById("output").innerText = "Page fully loaded!";
+    });
+
+    // This function runs when the user tries to close or reload the page
+    window.addEventListener("beforeunload", function (e) {
+      e.preventDefault();
+      e.returnValue = ''; // Required for some browsers
+    });
+    window.addEventListener("scroll",function (){
+        const scrollY = window.scrollY || window.pageYOffset;
+      document.getElementById("output").innerText = "Scroll Y position: " + scrollY;
+    });
+  </script>
+  <style>
+    body {
+      height: 2000px; /* So the page is scrollable */
+    }
+  </style>
+</head>
+<body>
+  <h2>Window Event Demo</h2>
+  <p id="output">Waiting for events...</p>
+</body>
+</html>

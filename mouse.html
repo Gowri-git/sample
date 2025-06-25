@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            border: 1px solid blue;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        input { padding: 5px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse Events</h2>
+    <div id="myBox" class="box">Click Me</div>
+    <p id="mouseOutput"></p>
+    <script>
+        // Mouse Events
+        const myBox = document.getElementById('myBox');
+        const mouseOutput = document.getElementById('mouseOutput');
+
+        myBox.addEventListener('click', () => {
+            mouseOutput.textContent = 'Box Clicked!';
+        });
+
+        myBox.addEventListener('mouseover', () => {
+            myBox.style.backgroundColor = 'lightcoral';
+            mouseOutput.textContent = 'Mouse over box!';
+        });
+
+        myBox.addEventListener('mouseout', () => {
+            myBox.style.backgroundColor = 'lightblue';
+            mouseOutput.textContent = 'Mouse out of box!';
+        });
+</script>
+</body>
+</html>
